@@ -6,6 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.useStaticAssets(join(__dirname, '..', 'public'));
-  await app.listen(3000);
+  app.useStaticAssets(join(__dirname, '..', 'dist'));
+  await app.listen(8080);
 }
 bootstrap();
